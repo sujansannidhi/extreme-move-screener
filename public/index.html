@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Extreme Move Screener</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--paper:#f4f6f7;--panel:#fff;--ink:#15212b;--ink2:#4a5966;--rule:#d5dde3;--tint:#e8eef2;--accent:#0b5c7a;--gain:#11734b;--loss:#b3261e;
+ --disp:"Archivo","Helvetica Neue",Arial,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--paper:#10171d;--panel:#16212a;--ink:#e3eaef;--ink2:#9fb0bd;--rule:#2a3843;--tint:#1c2933;--accent:#5fb6d6;--gain:#4cc78f;--loss:#f07a70;color-scheme:dark}}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--body)}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 18px 60px;display:grid;gap:34px}
+header{border-bottom:2px solid var(--ink);padding-bottom:16px;display:grid;gap:8px}
+.eb{font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+h1{font:800 clamp(30px,5vw,44px)/1.05 var(--disp);margin:0} h2{font:700 22px var(--disp);margin:0}
+p{margin:0;max-width:72ch} .note{font-size:13px;color:var(--ink2)} section{display:grid;gap:12px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.steps div{background:var(--panel);border:1px solid var(--rule);padding:12px 14px;display:grid;gap:4px}
+.scroll{overflow-x:auto;border:1px solid var(--rule);background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--rule);white-space:nowrap}
+thead th{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--tint)}
+tbody th{font-family:var(--mono)} .pos{color:var(--gain)} .neg{color:var(--loss)} a{color:var(--accent)}
+</style></head><body><div class="wrap">
+<header><div class="eb">Data through Fri Oct 02, 2026 close · updated automatically every weekday</div>
+<h1>Extreme Move Screener</h1>
+<p>Buy three of the day's most liquid extreme movers at the closing price, then sell into the first small pop. The rule was fixed before its out-of-sample test and is tracked here with paper trades.</p></header>
+<section><h2>Next buys</h2>
+<div class="steps"><div><span class="eb">Buy</span><p>Market-on-close order on the buy day. Fills at that day's close. Split capital three ways.</p></div>
+<div><span class="eb">Sell</span><p>Limit sell at your fill price plus the target %. If it opens above the target, sell at the open.</p></div>
+<div><span class="eb">Time limit</span><p>Not hit by the sell-by date? Sell at that day's close. No stop.</p></div></div>
+<div class="scroll"><table><thead><tr><th>Ticker</th><th>Last close</th><th>Target</th><th>Sell price*</th><th>Buy at close of</th><th>Sell by close of</th><th>20D</th><th>60D</th></tr></thead><tbody><tr><th>AMD</th><td>$633.91</td><td class='pos'>+0.95%</td><td><b>$639.96</b></td><td>2026-10-05</td><td>2026-10-12</td><td class='pos'>+39.0%</td><td>+16%</td></tr><tr><th>INTC</th><td>$119.33</td><td class='pos'>+1.29%</td><td><b>$120.87</b></td><td>2026-10-05</td><td>2026-10-12</td><td class='pos'>+30.2%</td><td>+6%</td></tr><tr><th>MRVL</th><td>$272.29</td><td class='pos'>+1.19%</td><td><b>$275.54</b></td><td>2026-10-05</td><td>2026-10-12</td><td class='pos'>+30.4%</td><td>+12%</td></tr></tbody></table></div>
+<p class="note">*If you fill at the last close. Recompute from your actual fill price. Exchange holidays are not modeled in the dates.</p></section>
+<section><h2>Paper-trade record</h2><p>Trades are open or waiting for their buy day. Results appear here as they close.</p>
+<div class="scroll"><table><thead><tr><th>Bought</th><th>Ticker</th><th>Entry</th><th>Exit / last</th><th>Result</th><th>Status</th><th>Exit day</th></tr></thead><tbody><tr><td>2026-10-05</td><th>AMD</th><td>—</td><td>—</td><td class=''>—</td><td>waiting for buy day</td><td></td></tr><tr><td>2026-10-05</td><th>INTC</th><td>—</td><td>—</td><td class=''>—</td><td>waiting for buy day</td><td></td></tr><tr><td>2026-10-05</td><th>MRVL</th><td>—</td><td>—</td><td class=''>—</td><td>waiting for buy day</td><td></td></tr></tbody></table></div>
+<p class="note">Replayed from daily bars: the target counts as hit if the day's high reaches it. Results include 5 bps selling cost.</p></section>
+<section><h2>Backtest</h2>
+<div class="scroll"><table><thead><tr><th>Period</th><th>Trades</th><th>Profitable</th><th>Avg trade</th><th>Worst 5%</th><th>Return</th><th>Max drawdown</th></tr></thead><tbody><tr><th>Development · Jul 2023 – Jun 2025</th><td>1,499</td><td>84%</td><td>+0.59%</td><td class='neg'>−10.5%</td><td>+122%</td><td class='neg'>−49%</td></tr><tr><th>Holdout · Jul 2025 – Oct 2026</th><td>944</td><td>83%</td><td>+0.31%</td><td class='neg'>−12.1%</td><td>+51%</td><td class='neg'>−40%</td></tr></tbody></table></div>
+<p class="note">About 1 in 6 trades loses, and the worst lost 25–47% in five days. Drawdowns were much deeper than the S&amp;P 500's. This is a research project, not financial advice. <a href="research.html">Full research report</a>.</p></section>
+</div></body></html>

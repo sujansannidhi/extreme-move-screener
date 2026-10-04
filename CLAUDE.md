@@ -17,6 +17,13 @@ python3 daily.py             # buys for the next close + sell prices for positio
 ```
 `positions.csv` (user-maintained, gitignored): `symbol,fill_date,fill_price`.
 
+## Automation (GitHub Actions + Vercel)
+- `.github/workflows/daily.yml` runs Mon–Fri at 22:30 UTC (after the close): update_yf → features → daily → build_site,
+  then commits `data/ohlcv_full.csv.gz`, `out/plan_*.csv` and `public/`. It can also be run by hand from the Actions tab.
+- `build_site.py` writes `public/index.html` (next buys, sell prices, paper-trade record replayed from the plans) and
+  `public/research.html` (copy of report.html). Vercel serves `public/` and redeploys on every push.
+- Never edit `out/plan_*.csv` by hand: they are the forward, out-of-sample paper-trade record.
+
 ## The live rule (pre-registered, see nextday_final.py)
 - Universe: extreme movers (`backtest.candidate_mask`), price ≥ $3, 20-day avg dollar volume ≥ $15M, leveraged ETFs excluded.
 - Pick the 3 most liquid candidates. Buy MOC next session.

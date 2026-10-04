@@ -9,7 +9,8 @@ normalizer.
 import numpy as np
 import pandas as pd
 
-ROOT = "/home/claude/extreme_mover"
+import os
+ROOT = os.path.dirname(os.path.abspath(__file__))
 HORIZONS = [1, 3, 5, 10, 20, 60]
 # corporate-action artifacts in the vendor history: drop data before these dates
 ARTIFACT_CUTS = {"HUT": "2023-12-05", "CORZ": "2024-01-25"}
