@@ -1,0 +1,47 @@
+name: Weekly model check
+
+on:
+  schedule:
+    # Saturdays 14:00 UTC (9am CT in summer)
+    - cron: "0 14 * * 6"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screener
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Update prices
+        run: python tools/update_yf.py
+      - name: Rebuild features
+        run: python features.py
+      - name: Weekly check (accuracy, re-tune, short re-test, mistake review)
+        run: python weekly.py
+      - name: Rebuild plan with any new settings
+        run: python daily.py
+      - name: Build site
+        run: python build_site.py
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ohlcv_full.csv.gz model/ out/weekly/ out/plan_*.csv out/ledger.csv public/
+          if git diff --cached --quiet; then echo "No changes"; else
+            git commit -m "Weekly model check $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi
