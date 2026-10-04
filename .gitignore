@@ -1,0 +1,11 @@
+__pycache__/
+*.pkl
+data/raw/
+data/raw_hist/
+data/fund/
+data/ohlcv.csv.gz
+positions.csv
+.DS_Store
+.venv/
+.ruff_cache/
+out/signals_*.csv

@@ -1,0 +1,519 @@
+symbol,sector,subindustry,group,sector_etf
+ABT,Health Care,Health Care Equipment,sp500,XLV
+ABBV,Health Care,Biotechnology,sp500,XLV
+ACN,Information Technology,IT Consulting & Other Services,sp500,XLK
+ADBE,Information Technology,Application Software,sp500,XLK
+AMD,Information Technology,Semiconductors,sp500,XLK
+AES,Utilities,Independent Power Producers & Energy Traders,sp500,XLU
+A,Health Care,Life Sciences Tools & Services,sp500,XLV
+ABNB,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+AKAM,Information Technology,Internet Services & Infrastructure,sp500,XLK
+ALB,Materials,Specialty Chemicals,sp500,XLB
+ALGN,Health Care,Health Care Supplies,sp500,XLV
+GOOGL,Communication Services,Interactive Media & Services,sp500,XLC
+GOOG,Communication Services,Interactive Media & Services,sp500,XLC
+AMZN,Consumer Discretionary,Broadline Retail,sp500,XLY
+AMGN,Health Care,Biotechnology,sp500,XLV
+APH,Information Technology,Electronic Components,sp500,XLK
+ADI,Information Technology,Semiconductors,sp500,XLK
+APA,Energy,Oil & Gas Exploration & Production,sp500,XLE
+APO,Financials,Asset Management & Custody Banks,sp500,XLF
+AAPL,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+AMAT,Information Technology,Semiconductor Materials & Equipment,sp500,XLK
+APP,Communication Services,Advertising,sp500,XLC
+APTV,Consumer Discretionary,Automotive Parts & Equipment,sp500,XLY
+ARES,Financials,Asset Management & Custody Banks,sp500,XLF
+ANET,Information Technology,Communications Equipment,sp500,XLK
+T,Communication Services,Integrated Telecommunication Services,sp500,XLC
+ADSK,Information Technology,Application Software,sp500,XLK
+AZO,Consumer Discretionary,Automotive Retail,sp500,XLY
+AXON,Industrials,Aerospace & Defense,sp500,XLI
+BKR,Energy,Oil & Gas Equipment & Services,sp500,XLE
+BAX,Health Care,Health Care Equipment,sp500,XLV
+BDX,Health Care,Health Care Equipment,sp500,XLV
+BBY,Consumer Discretionary,Computer & Electronics Retail,sp500,XLY
+TECH,Health Care,Life Sciences Tools & Services,sp500,XLV
+BIIB,Health Care,Biotechnology,sp500,XLV
+BX,Financials,Asset Management & Custody Banks,sp500,XLF
+BA,Industrials,Aerospace & Defense,sp500,XLI
+BKNG,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+BSX,Health Care,Health Care Equipment,sp500,XLV
+BMY,Health Care,Pharmaceuticals,sp500,XLV
+AVGO,Information Technology,Semiconductors,sp500,XLK
+BRO,Financials,Insurance Brokers,sp500,XLF
+CDNS,Information Technology,Application Software,sp500,XLK
+CAH,Health Care,Health Care Distributors,sp500,XLV
+CCL,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+CVNA,Consumer Discretionary,Automotive Retail,sp500,XLY
+CAT,Industrials,Construction Machinery & Heavy Transportation Equipment,sp500,XLI
+CDW,Information Technology,Technology Distributors,sp500,XLK
+COR,Health Care,Health Care Distributors,sp500,XLV
+CNC,Health Care,Managed Health Care,sp500,XLV
+CF,Materials,Fertilizers & Agricultural Chemicals,sp500,XLB
+CRL,Health Care,Life Sciences Tools & Services,sp500,XLV
+SCHW,Financials,Investment Banking & Brokerage,sp500,XLF
+CHTR,Communication Services,Cable & Satellite,sp500,XLC
+CVX,Energy,Integrated Oil & Gas,sp500,XLE
+CMG,Consumer Discretionary,Restaurants,sp500,XLY
+CIEN,Information Technology,Communications Equipment,sp500,XLK
+CI,Health Care,Health Care Services,sp500,XLV
+CSCO,Information Technology,Communications Equipment,sp500,XLK
+CTSH,Information Technology,IT Consulting & Other Services,sp500,XLK
+COHR,Information Technology,Electronic Components,sp500,XLK
+COIN,Financials,Financial Exchanges & Data,sp500,XLF
+CMCSA,Communication Services,Cable & Satellite,sp500,XLC
+COP,Energy,Oil & Gas Exploration & Production,sp500,XLE
+CEG,Utilities,Electric Utilities,sp500,XLU
+COO,Health Care,Health Care Supplies,sp500,XLV
+GLW,Information Technology,Electronic Components,sp500,XLK
+CPAY,Financials,Transaction & Payment Processing Services,sp500,XLF
+CRWD,Information Technology,Systems Software,sp500,XLK
+CVS,Health Care,Health Care Services,sp500,XLV
+DHR,Health Care,Life Sciences Tools & Services,sp500,XLV
+DRI,Consumer Discretionary,Restaurants,sp500,XLY
+DDOG,Information Technology,Application Software,sp500,XLK
+DVA,Health Care,Health Care Services,sp500,XLV
+DECK,Consumer Discretionary,Footwear,sp500,XLY
+DE,Industrials,Agricultural & Farm Machinery,sp500,XLI
+DELL,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+DAL,Industrials,Passenger Airlines,sp500,XLI
+DVN,Energy,Oil & Gas Exploration & Production,sp500,XLE
+DXCM,Health Care,Health Care Equipment,sp500,XLV
+FANG,Energy,Oil & Gas Exploration & Production,sp500,XLE
+DLR,Real Estate,Data Center REITs,sp500,XLRE
+DG,Consumer Staples,Consumer Staples Merchandise Retail,sp500,XLP
+DLTR,Consumer Staples,Consumer Staples Merchandise Retail,sp500,XLP
+DPZ,Consumer Discretionary,Restaurants,sp500,XLY
+DASH,Consumer Discretionary,Specialized Consumer Services,sp500,XLY
+DOW,Materials,Commodity Chemicals,sp500,XLB
+DHI,Consumer Discretionary,Homebuilding,sp500,XLY
+ETN,Industrials,Electrical Components & Equipment,sp500,XLI
+EBAY,Consumer Discretionary,Broadline Retail,sp500,XLY
+ECHO,Communication Services,Wireless Telecommunication Services,sp500,XLC
+EW,Health Care,Health Care Equipment,sp500,XLV
+ELV,Health Care,Managed Health Care,sp500,XLV
+EOG,Energy,Oil & Gas Exploration & Production,sp500,XLE
+EQT,Energy,Oil & Gas Exploration & Production,sp500,XLE
+EQIX,Real Estate,Data Center REITs,sp500,XLRE
+ERIE,Financials,Insurance Brokers,sp500,XLF
+EL,Consumer Staples,Personal Care Products,sp500,XLP
+P,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+EXE,Energy,Oil & Gas Exploration & Production,sp500,XLE
+EXPE,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+XOM,Energy,Integrated Oil & Gas,sp500,XLE
+FFIV,Information Technology,Communications Equipment,sp500,XLK
+FICO,Information Technology,Application Software,sp500,XLK
+FSLR,Information Technology,Semiconductors,sp500,XLK
+FLEX,Information Technology,Electronic Manufacturing Services,sp500,XLK
+F,Consumer Discretionary,Automobile Manufacturers,sp500,XLY
+FTNT,Information Technology,Systems Software,sp500,XLK
+FOXA,Communication Services,Broadcasting,sp500,XLC
+FOX,Communication Services,Broadcasting,sp500,XLC
+FCX,Materials,Copper,sp500,XLB
+GRMN,Consumer Discretionary,Consumer Electronics,sp500,XLY
+IT,Information Technology,IT Consulting & Other Services,sp500,XLK
+GEHC,Health Care,Health Care Equipment,sp500,XLV
+GEV,Industrials,Heavy Electrical Equipment,sp500,XLI
+GEN,Information Technology,Systems Software,sp500,XLK
+GNRC,Industrials,Heavy Electrical Equipment,sp500,XLI
+GM,Consumer Discretionary,Automobile Manufacturers,sp500,XLY
+GPC,Consumer Discretionary,Distributors,sp500,XLY
+GILD,Health Care,Biotechnology,sp500,XLV
+GPN,Financials,Transaction & Payment Processing Services,sp500,XLF
+GDDY,Information Technology,Internet Services & Infrastructure,sp500,XLK
+GS,Financials,Investment Banking & Brokerage,sp500,XLF
+HAL,Energy,Oil & Gas Equipment & Services,sp500,XLE
+HAS,Consumer Discretionary,Leisure Products,sp500,XLY
+HCA,Health Care,Health Care Facilities,sp500,XLV
+HSIC,Health Care,Health Care Distributors,sp500,XLV
+HPE,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+HLT,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+HD,Consumer Discretionary,Home Improvement Retail,sp500,XLY
+HWM,Industrials,Aerospace & Defense,sp500,XLI
+HPQ,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+HUM,Health Care,Managed Health Care,sp500,XLV
+IBM,Information Technology,IT Consulting & Other Services,sp500,XLK
+IDXX,Health Care,Health Care Equipment,sp500,XLV
+ILMN,Health Care,Life Sciences Tools & Services,sp500,XLV
+INCY,Health Care,Biotechnology,sp500,XLV
+PODD,Health Care,Health Care Equipment,sp500,XLV
+INTC,Information Technology,Semiconductors,sp500,XLK
+IBKR,Financials,Investment Banking & Brokerage,sp500,XLF
+INTU,Information Technology,Application Software,sp500,XLK
+ISRG,Health Care,Health Care Equipment,sp500,XLV
+IQV,Health Care,Life Sciences Tools & Services,sp500,XLV
+JBHT,Industrials,Cargo Ground Transportation,sp500,XLI
+JBL,Information Technology,Electronic Manufacturing Services,sp500,XLK
+JNJ,Health Care,Pharmaceuticals,sp500,XLV
+KEYS,Information Technology,Electronic Equipment & Instruments,sp500,XLK
+KMI,Energy,Oil & Gas Storage & Transportation,sp500,XLE
+KKR,Financials,Asset Management & Custody Banks,sp500,XLF
+KLAC,Information Technology,Semiconductor Materials & Equipment,sp500,XLK
+LH,Health Care,Health Care Services,sp500,XLV
+LRCX,Information Technology,Semiconductor Materials & Equipment,sp500,XLK
+LVS,Consumer Discretionary,Casinos & Gaming,sp500,XLY
+LEN,Consumer Discretionary,Homebuilding,sp500,XLY
+LLY,Health Care,Pharmaceuticals,sp500,XLV
+LYV,Communication Services,Movies & Entertainment,sp500,XLC
+LOW,Consumer Discretionary,Home Improvement Retail,sp500,XLY
+LULU,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",sp500,XLY
+LITE,Information Technology,Communications Equipment,sp500,XLK
+LYB,Materials,Specialty Chemicals,sp500,XLB
+MPC,Energy,Oil & Gas Refining & Marketing,sp500,XLE
+MAR,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+MRVL,Information Technology,Semiconductors,sp500,XLK
+MCD,Consumer Discretionary,Restaurants,sp500,XLY
+MCK,Health Care,Health Care Distributors,sp500,XLV
+MDT,Health Care,Health Care Equipment,sp500,XLV
+MRK,Health Care,Pharmaceuticals,sp500,XLV
+META,Communication Services,Interactive Media & Services,sp500,XLC
+MTD,Health Care,Life Sciences Tools & Services,sp500,XLV
+MGM,Consumer Discretionary,Casinos & Gaming,sp500,XLY
+MCHP,Information Technology,Semiconductors,sp500,XLK
+MU,Information Technology,Semiconductors,sp500,XLK
+MSFT,Information Technology,Systems Software,sp500,XLK
+MRNA,Health Care,Biotechnology,sp500,XLV
+MPWR,Information Technology,Semiconductors,sp500,XLK
+MS,Financials,Investment Banking & Brokerage,sp500,XLF
+MOS,Materials,Fertilizers & Agricultural Chemicals,sp500,XLB
+MSI,Information Technology,Communications Equipment,sp500,XLK
+MSCI,Financials,Financial Exchanges & Data,sp500,XLF
+NTAP,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+NFLX,Communication Services,Movies & Entertainment,sp500,XLC
+NEM,Materials,Gold,sp500,XLB
+NWSA,Communication Services,Publishing,sp500,XLC
+NWS,Communication Services,Publishing,sp500,XLC
+NKE,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",sp500,XLY
+NCLH,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+NRG,Utilities,Independent Power Producers & Energy Traders,sp500,XLU
+NUE,Materials,Steel,sp500,XLB
+NVDA,Information Technology,Semiconductors,sp500,XLK
+NVR,Consumer Discretionary,Homebuilding,sp500,XLY
+NXPI,Information Technology,Semiconductors,sp500,XLK
+ORLY,Consumer Discretionary,Automotive Retail,sp500,XLY
+OXY,Energy,Oil & Gas Exploration & Production,sp500,XLE
+OMC,Communication Services,Advertising,sp500,XLC
+ON,Information Technology,Semiconductors,sp500,XLK
+OKE,Energy,Oil & Gas Storage & Transportation,sp500,XLE
+ORCL,Information Technology,Application Software,sp500,XLK
+PLTR,Information Technology,Application Software,sp500,XLK
+PANW,Information Technology,Systems Software,sp500,XLK
+PSKY,Communication Services,Movies & Entertainment,sp500,XLC
+PYPL,Financials,Transaction & Payment Processing Services,sp500,XLF
+PFE,Health Care,Pharmaceuticals,sp500,XLV
+PSX,Energy,Oil & Gas Refining & Marketing,sp500,XLE
+PTC,Information Technology,Application Software,sp500,XLK
+PHM,Consumer Discretionary,Homebuilding,sp500,XLY
+PWR,Industrials,Construction & Engineering,sp500,XLI
+QCOM,Information Technology,Semiconductors,sp500,XLK
+DGX,Health Care,Health Care Services,sp500,XLV
+Q,Information Technology,Semiconductor Materials & Equipment,sp500,XLK
+RL,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",sp500,XLY
+RDDT,Communication Services,Interactive Media & Services,sp500,XLC
+REGN,Health Care,Biotechnology,sp500,XLV
+RMD,Health Care,Health Care Equipment,sp500,XLV
+RVTY,Health Care,Health Care Equipment,sp500,XLV
+ROP,Information Technology,Electronic Equipment & Instruments,sp500,XLK
+ROST,Consumer Discretionary,Apparel Retail,sp500,XLY
+RCL,Consumer Discretionary,"Hotels, Resorts & Cruise Lines",sp500,XLY
+CRM,Information Technology,Application Software,sp500,XLK
+SNDK,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+SLB,Energy,Oil & Gas Equipment & Services,sp500,XLE
+STX,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+NOW,Information Technology,Systems Software,sp500,XLK
+SWKS,Information Technology,Semiconductors,sp500,XLK
+SOLV,Health Care,Health Care Technology,sp500,XLV
+LUV,Industrials,Passenger Airlines,sp500,XLI
+SBUX,Consumer Discretionary,Restaurants,sp500,XLY
+STLD,Materials,Steel,sp500,XLB
+STE,Health Care,Health Care Equipment,sp500,XLV
+SYK,Health Care,Health Care Equipment,sp500,XLV
+SMCI,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+SYF,Financials,Consumer Finance,sp500,XLF
+SNPS,Information Technology,Application Software,sp500,XLK
+TMUS,Communication Services,Wireless Telecommunication Services,sp500,XLC
+TTWO,Communication Services,Interactive Home Entertainment,sp500,XLC
+TPR,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",sp500,XLY
+TRGP,Energy,Oil & Gas Storage & Transportation,sp500,XLE
+TEL,Information Technology,Electronic Manufacturing Services,sp500,XLK
+TDY,Information Technology,Electronic Equipment & Instruments,sp500,XLK
+TER,Information Technology,Semiconductor Materials & Equipment,sp500,XLK
+TSLA,Consumer Discretionary,Automobile Manufacturers,sp500,XLY
+TXN,Information Technology,Semiconductors,sp500,XLK
+TPL,Energy,Oil & Gas Exploration & Production,sp500,XLE
+TMO,Health Care,Life Sciences Tools & Services,sp500,XLV
+TJX,Consumer Discretionary,Apparel Retail,sp500,XLY
+TKO,Communication Services,Movies & Entertainment,sp500,XLC
+TSCO,Consumer Discretionary,Other Specialty Retail,sp500,XLY
+TDG,Industrials,Aerospace & Defense,sp500,XLI
+TRMB,Information Technology,Application Software,sp500,XLK
+TYL,Information Technology,Application Software,sp500,XLK
+UBER,Industrials,Passenger Ground Transportation,sp500,XLI
+ULTA,Consumer Discretionary,Other Specialty Retail,sp500,XLY
+UAL,Industrials,Passenger Airlines,sp500,XLI
+URI,Industrials,Trading Companies & Distributors,sp500,XLI
+UNH,Health Care,Managed Health Care,sp500,XLV
+UHS,Health Care,Health Care Facilities,sp500,XLV
+VLO,Energy,Oil & Gas Refining & Marketing,sp500,XLE
+VEEV,Health Care,Health Care Technology,sp500,XLV
+VRSN,Information Technology,Internet Services & Infrastructure,sp500,XLK
+VZ,Communication Services,Integrated Telecommunication Services,sp500,XLC
+VRTX,Health Care,Biotechnology,sp500,XLV
+VRT,Industrials,Electrical Components & Equipment,sp500,XLI
+VTRS,Health Care,Pharmaceuticals,sp500,XLV
+VST,Utilities,Electric Utilities,sp500,XLU
+DIS,Communication Services,Movies & Entertainment,sp500,XLC
+WBD,Communication Services,Broadcasting,sp500,XLC
+WAT,Health Care,Life Sciences Tools & Services,sp500,XLV
+WST,Health Care,Health Care Supplies,sp500,XLV
+WDC,Information Technology,"Technology Hardware, Storage & Peripherals",sp500,XLK
+WSM,Consumer Discretionary,Homefurnishing Retail,sp500,XLY
+WMB,Energy,Oil & Gas Storage & Transportation,sp500,XLE
+WDAY,Information Technology,Application Software,sp500,XLK
+WYNN,Consumer Discretionary,Casinos & Gaming,sp500,XLY
+YUM,Consumer Discretionary,Restaurants,sp500,XLY
+ZBRA,Information Technology,Electronic Equipment & Instruments,sp500,XLK
+ZBH,Health Care,Health Care Equipment,sp500,XLV
+ZTS,Health Care,Pharmaceuticals,sp500,XLV
+ARM,Information Technology,Semiconductors,highbeta,XLK
+ALAB,Information Technology,Semiconductors,highbeta,XLK
+CRDO,Information Technology,Semiconductors,highbeta,XLK
+AAOI,Information Technology,Semiconductors,highbeta,XLK
+SITM,Information Technology,Semiconductors,highbeta,XLK
+NVTS,Information Technology,Semiconductors,highbeta,XLK
+INDI,Information Technology,Semiconductors,highbeta,XLK
+AEHR,Information Technology,Semiconductors,highbeta,XLK
+ACMR,Information Technology,Semiconductors,highbeta,XLK
+CAMT,Information Technology,Semiconductors,highbeta,XLK
+ASML,Information Technology,Semiconductors,highbeta,XLK
+TSM,Information Technology,Semiconductors,highbeta,XLK
+AMKR,Information Technology,Semiconductors,highbeta,XLK
+RMBS,Information Technology,Semiconductors,highbeta,XLK
+POWI,Information Technology,Semiconductors,highbeta,XLK
+ONTO,Information Technology,Semiconductors,highbeta,XLK
+FORM,Information Technology,Semiconductors,highbeta,XLK
+ICHR,Information Technology,Semiconductors,highbeta,XLK
+SOXL,Information Technology,Semiconductors,highbeta,XLK
+AI,Information Technology,Application Software,highbeta,XLK
+SOUN,Information Technology,Application Software,highbeta,XLK
+BBAI,Information Technology,Application Software,highbeta,XLK
+SNOW,Information Technology,Application Software,highbeta,XLK
+MDB,Information Technology,Application Software,highbeta,XLK
+NET,Information Technology,Application Software,highbeta,XLK
+ZS,Information Technology,Application Software,highbeta,XLK
+OKTA,Information Technology,Application Software,highbeta,XLK
+GTLB,Information Technology,Application Software,highbeta,XLK
+S,Information Technology,Application Software,highbeta,XLK
+U,Information Technology,Application Software,highbeta,XLK
+DUOL,Information Technology,Application Software,highbeta,XLK
+RBLX,Information Technology,Application Software,highbeta,XLK
+ASAN,Information Technology,Application Software,highbeta,XLK
+PATH,Information Technology,Application Software,highbeta,XLK
+TWLO,Information Technology,Application Software,highbeta,XLK
+SHOP,Information Technology,Application Software,highbeta,XLK
+TOST,Information Technology,Application Software,highbeta,XLK
+BILL,Information Technology,Application Software,highbeta,XLK
+HUBS,Information Technology,Application Software,highbeta,XLK
+CFLT,Information Technology,Application Software,highbeta,XLK
+ESTC,Information Technology,Application Software,highbeta,XLK
+DOCN,Information Technology,Application Software,highbeta,XLK
+IOT,Information Technology,Application Software,highbeta,XLK
+KVYO,Information Technology,Application Software,highbeta,XLK
+DJT,Information Technology,Application Software,highbeta,XLK
+TTD,Information Technology,Application Software,highbeta,XLK
+IONQ,Information Technology,Quantum Computing,highbeta,XLK
+RGTI,Information Technology,Quantum Computing,highbeta,XLK
+QBTS,Information Technology,Quantum Computing,highbeta,XLK
+QUBT,Information Technology,Quantum Computing,highbeta,XLK
+ARQQ,Information Technology,Quantum Computing,highbeta,XLK
+CRWV,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+NBIS,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+APLD,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+IREN,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+CIFR,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+WULF,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+HUT,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+CORZ,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+MARA,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+RIOT,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+CLSK,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+BTDR,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+HIVE,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+BITF,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+BTBT,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+GLXY,Information Technology,AI Cloud / Crypto Miners,highbeta,XLK
+ASTS,Industrials,Space & Drones,highbeta,XLI
+RKLB,Industrials,Space & Drones,highbeta,XLI
+LUNR,Industrials,Space & Drones,highbeta,XLI
+RDW,Industrials,Space & Drones,highbeta,XLI
+PL,Industrials,Space & Drones,highbeta,XLI
+BKSY,Industrials,Space & Drones,highbeta,XLI
+ACHR,Industrials,Space & Drones,highbeta,XLI
+JOBY,Industrials,Space & Drones,highbeta,XLI
+KTOS,Industrials,Space & Drones,highbeta,XLI
+AVAV,Industrials,Space & Drones,highbeta,XLI
+SPCE,Industrials,Space & Drones,highbeta,XLI
+MNTS,Industrials,Space & Drones,highbeta,XLI
+OKLO,Utilities,Nuclear & Power,highbeta,XLU
+SMR,Utilities,Nuclear & Power,highbeta,XLU
+NNE,Utilities,Nuclear & Power,highbeta,XLU
+LEU,Utilities,Nuclear & Power,highbeta,XLU
+CCJ,Utilities,Nuclear & Power,highbeta,XLU
+UEC,Utilities,Nuclear & Power,highbeta,XLU
+TLN,Utilities,Nuclear & Power,highbeta,XLU
+BWXT,Utilities,Nuclear & Power,highbeta,XLU
+FLNC,Utilities,Nuclear & Power,highbeta,XLU
+EOSE,Utilities,Nuclear & Power,highbeta,XLU
+BE,Utilities,Nuclear & Power,highbeta,XLU
+PLUG,Utilities,Nuclear & Power,highbeta,XLU
+FCEL,Utilities,Nuclear & Power,highbeta,XLU
+NVAX,Health Care,Biotechnology,highbeta,XLV
+BNTX,Health Care,Biotechnology,highbeta,XLV
+VKTX,Health Care,Biotechnology,highbeta,XLV
+SRPT,Health Care,Biotechnology,highbeta,XLV
+ALNY,Health Care,Biotechnology,highbeta,XLV
+INSM,Health Care,Biotechnology,highbeta,XLV
+RARE,Health Care,Biotechnology,highbeta,XLV
+IOVA,Health Care,Biotechnology,highbeta,XLV
+CRSP,Health Care,Biotechnology,highbeta,XLV
+NTLA,Health Care,Biotechnology,highbeta,XLV
+BEAM,Health Care,Biotechnology,highbeta,XLV
+EDIT,Health Care,Biotechnology,highbeta,XLV
+VERV,Health Care,Biotechnology,highbeta,XLV
+ARWR,Health Care,Biotechnology,highbeta,XLV
+AXSM,Health Care,Biotechnology,highbeta,XLV
+ACAD,Health Care,Biotechnology,highbeta,XLV
+TGTX,Health Care,Biotechnology,highbeta,XLV
+EXEL,Health Care,Biotechnology,highbeta,XLV
+HALO,Health Care,Biotechnology,highbeta,XLV
+SMMT,Health Care,Biotechnology,highbeta,XLV
+KRYS,Health Care,Biotechnology,highbeta,XLV
+CYTK,Health Care,Biotechnology,highbeta,XLV
+MDGL,Health Care,Biotechnology,highbeta,XLV
+RVMD,Health Care,Biotechnology,highbeta,XLV
+RXRX,Health Care,Biotechnology,highbeta,XLV
+TEM,Health Care,Biotechnology,highbeta,XLV
+HIMS,Health Care,Biotechnology,highbeta,XLV
+OSCR,Health Care,Biotechnology,highbeta,XLV
+CLOV,Health Care,Biotechnology,highbeta,XLV
+NUVL,Health Care,Biotechnology,highbeta,XLV
+IMVT,Health Care,Biotechnology,highbeta,XLV
+APLS,Health Care,Biotechnology,highbeta,XLV
+ROIV,Health Care,Biotechnology,highbeta,XLV
+BCRX,Health Care,Biotechnology,highbeta,XLV
+DNLI,Health Care,Biotechnology,highbeta,XLV
+PCVX,Health Care,Biotechnology,highbeta,XLV
+RNA,Health Care,Biotechnology,highbeta,XLV
+JANX,Health Care,Biotechnology,highbeta,XLV
+KURA,Health Care,Biotechnology,highbeta,XLV
+SAVA,Health Care,Biotechnology,highbeta,XLV
+GERN,Health Care,Biotechnology,highbeta,XLV
+ABCL,Health Care,Biotechnology,highbeta,XLV
+NVCR,Health Care,Biotechnology,highbeta,XLV
+TMDX,Health Care,Biotechnology,highbeta,XLV
+MSTR,Financials,Crypto & Fintech,highbeta,XLF
+HOOD,Financials,Crypto & Fintech,highbeta,XLF
+SOFI,Financials,Crypto & Fintech,highbeta,XLF
+CRCL,Financials,Crypto & Fintech,highbeta,XLF
+UPST,Financials,Crypto & Fintech,highbeta,XLF
+AFRM,Financials,Crypto & Fintech,highbeta,XLF
+LMND,Financials,Crypto & Fintech,highbeta,XLF
+ROOT,Financials,Crypto & Fintech,highbeta,XLF
+RKT,Financials,Crypto & Fintech,highbeta,XLF
+UWMC,Financials,Crypto & Fintech,highbeta,XLF
+NU,Financials,Crypto & Fintech,highbeta,XLF
+FUTU,Financials,Crypto & Fintech,highbeta,XLF
+TIGR,Financials,Crypto & Fintech,highbeta,XLF
+LC,Financials,Crypto & Fintech,highbeta,XLF
+DAVE,Financials,Crypto & Fintech,highbeta,XLF
+BTCS,Financials,Crypto & Fintech,highbeta,XLF
+SBET,Financials,Crypto & Fintech,highbeta,XLF
+BMNR,Financials,Crypto & Fintech,highbeta,XLF
+RIVN,Consumer Discretionary,EV & Autos,highbeta,XLY
+LCID,Consumer Discretionary,EV & Autos,highbeta,XLY
+NIO,Consumer Discretionary,EV & Autos,highbeta,XLY
+XPEV,Consumer Discretionary,EV & Autos,highbeta,XLY
+LI,Consumer Discretionary,EV & Autos,highbeta,XLY
+QS,Consumer Discretionary,EV & Autos,highbeta,XLY
+LAZR,Consumer Discretionary,EV & Autos,highbeta,XLY
+PSNY,Consumer Discretionary,EV & Autos,highbeta,XLY
+CHPT,Consumer Discretionary,EV & Autos,highbeta,XLY
+BLNK,Consumer Discretionary,EV & Autos,highbeta,XLY
+RUN,Consumer Discretionary,EV & Autos,highbeta,XLY
+ENPH,Consumer Discretionary,EV & Autos,highbeta,XLY
+SEDG,Consumer Discretionary,EV & Autos,highbeta,XLY
+ARRY,Consumer Discretionary,EV & Autos,highbeta,XLY
+NXT,Consumer Discretionary,EV & Autos,highbeta,XLY
+GME,Consumer Discretionary,Retail & Internet,highbeta,XLY
+AMC,Consumer Discretionary,Retail & Internet,highbeta,XLY
+OPEN,Consumer Discretionary,Retail & Internet,highbeta,XLY
+KSS,Consumer Discretionary,Retail & Internet,highbeta,XLY
+SE,Consumer Discretionary,Retail & Internet,highbeta,XLY
+MELI,Consumer Discretionary,Retail & Internet,highbeta,XLY
+GRAB,Consumer Discretionary,Retail & Internet,highbeta,XLY
+BABA,Consumer Discretionary,Retail & Internet,highbeta,XLY
+PDD,Consumer Discretionary,Retail & Internet,highbeta,XLY
+JD,Consumer Discretionary,Retail & Internet,highbeta,XLY
+BIDU,Consumer Discretionary,Retail & Internet,highbeta,XLY
+CPNG,Consumer Discretionary,Retail & Internet,highbeta,XLY
+W,Consumer Discretionary,Retail & Internet,highbeta,XLY
+ETSY,Consumer Discretionary,Retail & Internet,highbeta,XLY
+CHWY,Consumer Discretionary,Retail & Internet,highbeta,XLY
+PTON,Consumer Discretionary,Retail & Internet,highbeta,XLY
+FIVE,Consumer Discretionary,Retail & Internet,highbeta,XLY
+ELF,Consumer Discretionary,Retail & Internet,highbeta,XLY
+DKNG,Consumer Discretionary,Retail & Internet,highbeta,XLY
+ROKU,Consumer Discretionary,Retail & Internet,highbeta,XLY
+SNAP,Consumer Discretionary,Retail & Internet,highbeta,XLY
+PINS,Consumer Discretionary,Retail & Internet,highbeta,XLY
+SPOT,Consumer Discretionary,Retail & Internet,highbeta,XLY
+NFE,Energy,Energy Services & LNG,highbeta,XLE
+AR,Energy,Energy Services & LNG,highbeta,XLE
+RRC,Energy,Energy Services & LNG,highbeta,XLE
+CHRD,Energy,Energy Services & LNG,highbeta,XLE
+VAL,Energy,Energy Services & LNG,highbeta,XLE
+RIG,Energy,Energy Services & LNG,highbeta,XLE
+NE,Energy,Energy Services & LNG,highbeta,XLE
+BTU,Energy,Energy Services & LNG,highbeta,XLE
+AMR,Energy,Energy Services & LNG,highbeta,XLE
+HCC,Energy,Energy Services & LNG,highbeta,XLE
+MP,Materials,Metals & Mining,highbeta,XLB
+USAR,Materials,Metals & Mining,highbeta,XLB
+CENX,Materials,Metals & Mining,highbeta,XLB
+AA,Materials,Metals & Mining,highbeta,XLB
+CLF,Materials,Metals & Mining,highbeta,XLB
+X,Materials,Metals & Mining,highbeta,XLB
+HL,Materials,Metals & Mining,highbeta,XLB
+CDE,Materials,Metals & Mining,highbeta,XLB
+AG,Materials,Metals & Mining,highbeta,XLB
+SILV,Materials,Metals & Mining,highbeta,XLB
+PAAS,Materials,Metals & Mining,highbeta,XLB
+AGI,Materials,Metals & Mining,highbeta,XLB
+KGC,Materials,Metals & Mining,highbeta,XLB
+GOLD,Materials,Metals & Mining,highbeta,XLB
+FNV,Materials,Metals & Mining,highbeta,XLB
+ZIM,Industrials,Shipping & Transport,highbeta,XLI
+FRO,Industrials,Shipping & Transport,highbeta,XLI
+STNG,Industrials,Shipping & Transport,highbeta,XLI
+GLNG,Industrials,Shipping & Transport,highbeta,XLI
+SBLK,Industrials,Shipping & Transport,highbeta,XLI
+AAL,Industrials,Shipping & Transport,highbeta,XLI
+JBLU,Industrials,Shipping & Transport,highbeta,XLI
+SAVE,Industrials,Shipping & Transport,highbeta,XLI
+XLB,ETF,ETF,etf,SPY
+XLC,ETF,ETF,etf,SPY
+XLE,ETF,ETF,etf,SPY
+XLF,ETF,ETF,etf,SPY
+XLI,ETF,ETF,etf,SPY
+XLK,ETF,ETF,etf,SPY
+XLP,ETF,ETF,etf,SPY
+XLRE,ETF,ETF,etf,SPY
+XLU,ETF,ETF,etf,SPY
+XLV,ETF,ETF,etf,SPY
+XLY,ETF,ETF,etf,SPY
+SPY,ETF,ETF,etf,SPY
+QQQ,ETF,ETF,etf,SPY
+IWM,ETF,ETF,etf,SPY
+SMH,ETF,ETF,etf,SPY
+XBI,ETF,ETF,etf,SPY
+ARKK,ETF,ETF,etf,SPY
