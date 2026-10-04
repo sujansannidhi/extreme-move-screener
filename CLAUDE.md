@@ -18,11 +18,22 @@ python3 daily.py             # buys for the next close + sell prices for positio
 `positions.csv` (user-maintained, gitignored): `symbol,fill_date,fill_price`.
 
 ## Automation (GitHub Actions + Vercel)
-- `.github/workflows/daily.yml` runs Mon–Fri at 22:30 UTC (after the close): update_yf → features → daily → build_site,
-  then commits `data/ohlcv_full.csv.gz`, `out/plan_*.csv` and `public/`. It can also be run by hand from the Actions tab.
-- `build_site.py` writes `public/index.html` (next buys, sell prices, paper-trade record replayed from the plans) and
-  `public/research.html` (copy of report.html). Vercel serves `public/` and redeploys on every push.
-- Never edit `out/plan_*.csv` by hand: they are the forward, out-of-sample paper-trade record.
+- `.github/workflows/daily.yml` — Mon–Fri 22:30 UTC: update_yf → features → daily → build_site; commits prices,
+  `out/plan_*.csv`, `out/ledger.csv`, `public/`.
+- `.github/workflows/weekly.yml` — Saturdays 14:00 UTC: `weekly.py` (accuracy check, guarded re-tune, short re-test,
+  mistake review) → may update `model/params.json` + `model/changelog.md` → rebuild plan and site.
+- Vercel serves `public/` (framework preset "Other") and redeploys on every push.
+- The user's GitHub token can't push workflow files; edit `.github/workflows/*` on github.com.
+
+## Code map for the live system
+- `strategy.py` — rules, exit simulation (`simulate`), NYSE holiday calendar, `model/params.json` loader.
+- `daily.py` — writes `out/plan_<signal date>.csv` (side LONG / LONG_PAUSED / SHORT / SHORT_WATCH, order date, exit-by date, target).
+- `ledger.py` — replays all plans → `out/ledger.csv` with tags SUCCESS / FAIL / OPEN / PENDING / WATCH:*.
+  `out/backfill_plans.csv` (from `backfill.py`) = SIMULATED pre-launch history, always labelled as such.
+- `weekly.py` — see its docstring. Guardrails: ALERT pauses longs; shorts need avg ≥ +0.5%, ≥80% wins, worst ≥ −35%.
+- Research behind those choices: `research_shorts.py` (out/research_shorts.csv), `adaptive_backtest.py`
+  (out/adaptive_backtest.json, out/adaptive_compare.csv). Unguarded weekly re-tuning was unstable; the 80%-win guard
+  matched the fixed rule. All short variants were negative or had catastrophic tails; stops made them negative.
 
 ## The live rule (pre-registered, see nextday_final.py)
 - Universe: extreme movers (`backtest.candidate_mask`), price ≥ $3, 20-day avg dollar volume ≥ $15M, leveraged ETFs excluded.

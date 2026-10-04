@@ -1,76 +1,63 @@
-"""Daily buy-at-close plan.
+"""Daily plan: the next session's orders, with exact dates.
 
-Run after the market closes (or before the open next day):
-    python3 tools/update_yf.py      # append the newest daily bars (free, via yfinance)
-    python3 features.py             # rebuild features (~20 s)
-    python3 daily.py                # today's buys + sell prices for open positions
+    python3 tools/update_yf.py && python3 features.py && python3 daily.py
 
-Rule (fixed before the Jul-2025+ holdout, see nextday_final.py):
-  - Universe: extreme-move candidates (backtest.candidate_mask), $3+ price, $15M+ avg dollar volume
-  - Buy: the 3 most liquid candidates, market-on-close order on the next session
-  - Sell: limit sell at fill * (1 + 0.25 * ATR%); if it opens above, sell at the open
-  - Time limit: sell at the close of the 5th session after the buy if the target never trades. No stop.
-
-positions.csv (you maintain it): symbol,fill_date,fill_price   one row per open position
+Writes out/plan_<signal date>.csv — one row per order (side LONG, or SHORT_WATCH when shorts are off).
+These files are the live, forward paper-trade record. Never edit them by hand.
 """
 import os
+import sys
+
 import numpy as np
 import pandas as pd
 
 from features import ROOT, load_meta
 from backtest import candidate_mask
-
-K, TARGET_ATR, MAX_DAYS = 3, 0.25, 5
-EXCLUDE = {"SOXL"}
+from strategy import load_params, select, trading_days_after
 
 
-def next_sessions(start, n):
-    """Business days after `start` (exchange holidays not modeled — check your broker's calendar)."""
-    return pd.bdate_range(start + pd.Timedelta(days=1), periods=n)
+def build_plan(day_df, signal_date, params):
+    rows = []
+    order_day = trading_days_after(signal_date, 1)[0]
+    for side in ["long", "short"]:
+        p = params[side]
+        picks = select(day_df, side, params, candidate_mask)
+        if side == "long":
+            label = "LONG" if (p["enabled"] and not p.get("paused")) else "LONG_PAUSED"
+        else:
+            label = "SHORT" if (p["enabled"] and not p.get("paused")) else "SHORT_WATCH"
+        sell_by = trading_days_after(order_day, p["max_days"])[-1]
+        sgn = 1 if side == "long" else -1
+        for r in picks.itertuples():
+            rows.append(dict(
+                side=label, symbol=r.symbol, signal_date=signal_date.date(), order_date=order_day.date(),
+                sell_by=sell_by.date(), last_close=round(r.price, 4), atr_pct=round(r.atr_pct, 5),
+                target_atr=p["target_atr"], max_days=p["max_days"],
+                target_pct=round(sgn * p["target_atr"] * r.atr_pct, 5),
+                target_if_fill_at_last_close=round(r.price * (1 + sgn * p["target_atr"] * r.atr_pct), 4),
+                ret_1=round(r.ret_1, 4), ret_5=round(r.ret_5, 4), ret_20=round(r.ret_20, 4), ret_60=round(r.ret_60, 4),
+                rev_score=round(r.REV_rule, 1) if np.isfinite(r.REV_rule) else None,
+                dollar_vol20=round(r.dollar_vol20), params_version=params.get("version", 1)))
+    return pd.DataFrame(rows)
 
 
-def main():
+def main(asof=None):
     meta = load_meta()
     f = pd.read_pickle(f"{ROOT}/data/features.pkl")
-    asof = f.date.max()
-    t = f[(f.date == asof) & f.symbol.isin(meta.query("group != 'etf'").index) & ~f.symbol.isin(EXCLUDE)]
-    t = t[(t.price >= 3) & (t.dollar_vol20 >= 15e6)]
-    c = t[candidate_mask(t)].sort_values("dollar_vol20", ascending=False)
-    buy_day = next_sessions(asof, 1)[0]
-    last_day = next_sessions(buy_day, MAX_DAYS)[-1]
-    picks = c.head(K).copy()
-    picks["target_pct"] = TARGET_ATR * picks.atr_pct
-    picks["sell_price_if_fill_at_last_close"] = picks.price * (1 + picks.target_pct)
-    picks["buy_on_close_of"] = buy_day.date()
-    picks["sell_by_close_of"] = last_day.date()
-    cols = ["symbol", "price", "target_pct", "sell_price_if_fill_at_last_close", "buy_on_close_of", "sell_by_close_of",
-            "ret_1", "ret_5", "ret_20", "ret_60", "atr_pct", "dollar_vol20"]
+    f = f[f.symbol.isin(meta.query("group != 'etf'").index)]
+    asof = pd.Timestamp(asof) if asof else f.date.max()
+    day = f[f.date == asof]
+    params = load_params()
+    plan = build_plan(day, asof, params)
     os.makedirs(f"{ROOT}/out", exist_ok=True)
-    picks[cols].to_csv(f"{ROOT}/out/plan_{asof.date()}.csv", index=False)
-
-    print(f"Signals from the {asof.date()} close. {len(c)} extreme movers qualified.\n")
-    print(f"BUY (market-on-close on {buy_day:%a %b %d}):")
-    for r in picks.itertuples():
-        print(f"  {r.symbol:6s} last close ${r.price:,.2f} | target +{r.target_pct*100:.2f}% "
-              f"-> limit sell ≈ ${r.sell_price_if_fill_at_last_close:,.2f} (recompute from your fill) "
-              f"| sell at close {last_day:%a %b %d} if not hit")
-
-    pos_path = f"{ROOT}/positions.csv"
-    if os.path.exists(pos_path):
-        pos = pd.read_csv(pos_path, parse_dates=["fill_date"])
-        if len(pos):
-            atr = t.set_index("symbol").atr_pct.reindex(pos.symbol).values
-            print("\nOPEN POSITIONS:")
-            for (r, a) in zip(pos.itertuples(), atr):
-                a = a if np.isfinite(a) else np.nan
-                # ATR at the signal date is what the backtest used; current ATR is a close proxy
-                tgt = r.fill_price * (1 + TARGET_ATR * a)
-                dl = next_sessions(r.fill_date, MAX_DAYS)[-1]
-                last = t.set_index("symbol").price.get(r.symbol, np.nan)
-                print(f"  {r.symbol:6s} filled ${r.fill_price:,.2f} on {r.fill_date:%b %d} | limit sell ${tgt:,.2f} "
-                      f"| last close ${last:,.2f} ({last / r.fill_price - 1:+.1%}) | time exit at close {dl:%a %b %d}"
-                      + ("  <-- SELL AT TODAY'S CLOSE" if dl.date() <= next_sessions(asof, 1)[0].date() else ""))
+    plan.to_csv(f"{ROOT}/out/plan_{asof.date()}.csv", index=False)
+    print(f"Signals from the {asof.date()} close (params v{params.get('version', 1)}).")
+    for r in plan.itertuples():
+        verb = {"LONG": "BUY", "SHORT": "SELL SHORT"}.get(r.side, "WATCH ONLY")
+        print(f"  {r.side:12s} {r.symbol:6s} {verb:10s} MOC on {r.order_date} | target {r.target_pct*100:+.2f}% "
+              f"(≈ ${r.target_if_fill_at_last_close:,.2f}) | exit by close {r.sell_by}")
+    return plan
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else None)

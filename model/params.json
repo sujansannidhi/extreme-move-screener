@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "updated": "2026-10-04",
+  "long": {"enabled": true, "paused": false, "k": 3, "target_atr": 0.25, "max_days": 5, "rank_by": "dollar_vol20"},
+  "short": {"enabled": false, "paused": false, "k": 3, "target_atr": 0.25, "max_days": 5, "rank_by": "ret_5"}
+}
