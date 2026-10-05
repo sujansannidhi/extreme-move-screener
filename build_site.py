@@ -44,8 +44,7 @@ def nice(d):
 
 
 TAG = {"SUCCESS": ("ok", "Success"), "FAIL": ("bad", "Fail"), "OPEN": ("open", "Open"), "PENDING": ("pend", "Pending"),
-       "WATCH:SUCCESS": ("ok", "Would have worked"), "WATCH:FAIL": ("bad", "Would have failed"),
-       "WATCH:OPEN": ("open", "Watching"), "WATCH": ("pend", "Watch")}
+}
 
 
 def tag_chip(t):
@@ -100,9 +99,7 @@ def main():
            "<th>5D</th><th>60D</th><th title='Reversal Score: higher means more pullback risk'>Rev.</th></tr>")
 
     # ----- trade log
-    lg = led[led.side.isin(["LONG", "LONG_PAUSED"])].sort_values(["order_date", "symbol"], ascending=[False, True])
-    live_l, sim_l = lg[lg.source == "LIVE"], lg[lg.source == "SIMULATED"]
-    sw = led[led.side.isin(["SHORT", "SHORT_WATCH"])].sort_values(["order_date", "symbol"], ascending=[False, True])
+    live_l = led.sort_values(["order_date", "side", "symbol"], ascending=[False, True, True]) if len(led) else led
 
     # ----- weekly card
     if wk:
@@ -122,9 +119,9 @@ def main():
         weekly_html = f"""
 <div class="cards">
  <div class="card"><span class="eb">Status · week of {nice(wk['date'])}</span><div class="big"><span class="chip {stc}">{E(st)}</span></div>
-  <p>Last 40 closed trades: {pct(l40.get('win'), 0, False)} profitable, average {pct(l40.get('avg'), 2)}. Backtest expectation: about 83% profitable, average +0.3% to +0.6%.</p></div>
+  <p>Backtest of the current rule on its last 40 completed signals (not your trades): {pct(l40.get('win'), 0, False)} profitable, average {pct(l40.get('avg'), 2)}. Long-run expectation: about 83% profitable, average +0.3% to +0.6%.</p></div>
  <div class="card"><span class="eb">Changes made</span><ul>{acts}</ul><p class="note">Current rule: target {params['long']['target_atr']}×ATR, up to {params['long']['max_days']} sessions (v{params.get('version', 1)}).</p></div>
- <div class="card"><span class="eb">Mistake review · last 13 weeks</span><ul>{pats}</ul><p class="note">{wk['mistakes']['n_losers']} losing vs {wk['mistakes']['n_winners']} winning trades. Patterns are reported, not acted on, until they hold up on new data.</p></div>
+ <div class="card"><span class="eb">Mistake review · backtest, last 13 weeks</span><ul>{pats}</ul><p class="note">{wk['mistakes']['n_losers']} losing vs {wk['mistakes']['n_winners']} winning backtest signals. Patterns are reported, not acted on, until they hold up on new data.</p></div>
 </div>
 <details><summary>Re-tune table (last 26 weeks) and short re-test</summary>
 <div class="scroll"><table><thead><tr><th>Target</th><th>Max hold</th><th>Trades</th><th>Profitable</th><th>Avg</th></tr></thead><tbody>{rt}</tbody></table></div>
@@ -189,19 +186,15 @@ details summary{{cursor:pointer;font-weight:600;margin:6px 0}}
 <div class="scroll"><table><thead>{hdr}</thead><tbody>{order_rows(longs, "Buy")}</tbody></table></div>
 <p class="note">*If you fill at the last close. Recompute from your fill: long exit = fill × (1 + target). No stop: in testing, every stop lowered the average result.</p>
 <h3>Shorts</h3>
-{"" if short_on else "<div class='off'><b>Shorts are off.</b><span class='note'>The best short rule averaged about +0.1% to +0.5% per trade, but single trades lost up to 89–223% when a stock kept running. Every protective stop turned it negative. The weekly re-test switches shorts on only if they clear the bar. Watch list below: the biggest 5-day gainers and where a short would have covered.</span></div>"}
+{"" if short_on else "<div class='off'><b>Shorts are off.</b><span class='note'>The best short rule averaged about +0.1% to +0.5% per trade, but single trades lost up to 89–223% when a stock kept running. Every protective stop turned it negative. The weekly re-test switches shorts on only if they clear the bar. Watch list below (not trades): the biggest 5-day gainers.</span></div>"}
 <div class="scroll"><table><thead>{hdr}</thead><tbody>{order_rows(shorts, "Short" if short_on else "Watch")}</tbody></table></div>
 </section>
 
 <section><h2>Trade log</h2>
-<p><b>Live:</b> {summary(live_l)} <b>Simulated (60 sessions before launch):</b> {summary(sim_l)}</p>
+<p>{summary(live_l)} Only real orders published on this site are logged; nothing is back-filled.</p>
 <div class="tabs" role="group" aria-label="Filter trade log"><button aria-pressed="true" data-f="ALL">All</button><button aria-pressed="false" data-f="SUCCESS">Success</button><button aria-pressed="false" data-f="FAIL">Fail</button><button aria-pressed="false" data-f="OPEN">Open</button><button aria-pressed="false" data-f="PENDING">Pending</button></div>
-<h3>Live (published before the trade)</h3>
-<div class="scroll log"><table class="flt"><thead><tr><th>Result</th><th>Bought</th><th>Ticker</th><th>Entry</th><th>Target</th><th>Exit / last</th><th>Return</th><th>What happened</th><th>Exit day</th></tr></thead><tbody>{log_rows(live_l) or "<tr><td colspan='9'>Live trades start with the first order day.</td></tr>"}</tbody></table></div>
-<h3>Simulated history (before launch)</h3>
-<div class="scroll log"><table class="flt"><thead><tr><th>Result</th><th>Bought</th><th>Ticker</th><th>Entry</th><th>Target</th><th>Exit / last</th><th>Return</th><th>What happened</th><th>Exit day</th></tr></thead><tbody>{log_rows(sim_l)}</tbody></table></div>
-<details><summary>Short watch list history</summary><div class="scroll log"><table class="flt"><thead><tr><th>Result</th><th>Day</th><th>Ticker</th><th>Price</th><th>Target</th><th>Exit / last</th><th>Short return</th><th>What happened</th><th>Exit day</th></tr></thead><tbody>{log_rows(sw)}</tbody></table></div></details>
-<p class="note">Replayed from daily bars: a target counts as hit if the day's range reaches it. Returns include selling costs (and borrow for shorts).</p>
+<div class="scroll log"><table class="flt"><thead><tr><th>Result</th><th>Bought</th><th>Ticker</th><th>Entry</th><th>Target</th><th>Exit / last</th><th>Return</th><th>What happened</th><th>Exit day</th></tr></thead><tbody>{log_rows(live_l) or "<tr><td colspan='9'>The first orders are for Mon Oct 5. Results appear here as they happen.</td></tr>"}</tbody></table></div>
+<p class="note">Graded from daily prices: a target counts as hit if the day's range reaches it. Returns include selling costs (and borrow for shorts).</p>
 </section>
 
 <section><h2>Weekly model check</h2>{weekly_html}

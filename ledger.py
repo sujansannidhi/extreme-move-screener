@@ -1,12 +1,10 @@
-"""Trade log: replays every plan against the price data and tags each trade.
+"""Trade log: replays every LIVE order (out/plan_*.csv, published before the trade happened) and tags it.
 
-  source  LIVE      = from out/plan_*.csv (published before the trade happened)
-          SIMULATED = out/backfill_plans.csv (what the rule would have picked before launch; labelled as such)
+Only real orders are logged: watch-list names and simulated history are never tagged SUCCESS/FAIL.
   tag     SUCCESS   = closed with a net gain
           FAIL      = closed with a net loss (or flat)
           OPEN      = bought, still inside its window (valued at the last close)
           PENDING   = order day has not happened yet
-          WATCH     = short watch-list name (not a trade); shows what a short would have done
 """
 import glob
 import os
@@ -68,16 +66,15 @@ def build_ledger():
     live = sorted(glob.glob(f"{ROOT}/out/plan_*.csv"))
     if live:
         frames.append(pd.concat([pd.read_csv(p) for p in live]).assign(source="LIVE"))
-    if os.path.exists(f"{ROOT}/out/backfill_plans.csv"):
-        frames.append(pd.read_csv(f"{ROOT}/out/backfill_plans.csv").assign(source="SIMULATED"))
     if not frames:
         return pd.DataFrame(columns=COLS)
     plans = pd.concat(frames, ignore_index=True)
+    plans = plans[plans.side.isin(["LONG", "SHORT"])]        # real orders only
+    if plans.empty:
+        return pd.DataFrame(columns=COLS)
     rows = []
     for r in plans.itertuples():
         res, tag = replay_row(r, px, dates)
-        if r.side in ("SHORT_WATCH", "LONG_PAUSED") and tag in ("SUCCESS", "FAIL", "OPEN"):
-            tag = "WATCH:" + tag
         rows.append({**{c: getattr(r, c, None) for c in ["source", "side", "symbol", "signal_date", "order_date", "sell_by",
                                                         "atr_pct", "ret_5", "ret_20", "ret_60", "rev_score", "dollar_vol20"]},
                      **res, "tag": tag})

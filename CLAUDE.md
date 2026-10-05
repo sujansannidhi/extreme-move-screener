@@ -28,8 +28,8 @@ python3 daily.py             # buys for the next close + sell prices for positio
 ## Code map for the live system
 - `strategy.py` — rules, exit simulation (`simulate`), NYSE holiday calendar, `model/params.json` loader.
 - `daily.py` — writes `out/plan_<signal date>.csv` (side LONG / LONG_PAUSED / SHORT / SHORT_WATCH, order date, exit-by date, target).
-- `ledger.py` — replays all plans → `out/ledger.csv` with tags SUCCESS / FAIL / OPEN / PENDING / WATCH:*.
-  `out/backfill_plans.csv` (from `backfill.py`) = SIMULATED pre-launch history, always labelled as such.
+- `ledger.py` — replays LIVE orders only (LONG / SHORT rows of `out/plan_*.csv`) → `out/ledger.csv` with tags
+  SUCCESS / FAIL / OPEN / PENDING. The user does not want simulated or watch-list results tagged; never back-fill the log.
 - `weekly.py` — see its docstring. Guardrails: ALERT pauses longs; shorts need avg ≥ +0.5%, ≥80% wins, worst ≥ −35%.
 - Research behind those choices: `research_shorts.py` (out/research_shorts.csv), `adaptive_backtest.py`
   (out/adaptive_backtest.json, out/adaptive_compare.csv). Unguarded weekly re-tuning was unstable; the 80%-win guard
