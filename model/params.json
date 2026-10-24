@@ -1,6 +1,20 @@
 {
-  "version": 1,
-  "updated": "2026-10-04",
-  "long": {"enabled": true, "paused": false, "k": 3, "target_atr": 0.25, "max_days": 5, "rank_by": "dollar_vol20"},
-  "short": {"enabled": false, "paused": false, "k": 3, "target_atr": 0.25, "max_days": 5, "rank_by": "ret_5"}
+  "version": 2,
+  "updated": "2026-10-24",
+  "long": {
+    "enabled": true,
+    "k": 3,
+    "target_atr": 0.25,
+    "max_days": 5,
+    "rank_by": "dollar_vol20",
+    "paused": true
+  },
+  "short": {
+    "enabled": false,
+    "k": 3,
+    "target_atr": 0.25,
+    "max_days": 5,
+    "rank_by": "ret_5",
+    "paused": false
+  }
 }
