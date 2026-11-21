@@ -1,0 +1,165 @@
+{
+ "date": "2026-11-21",
+ "params_before": {
+  "version": 2,
+  "updated": "2026-10-24",
+  "long": {
+   "enabled": true,
+   "k": 3,
+   "target_atr": 0.25,
+   "max_days": 5,
+   "rank_by": "dollar_vol20",
+   "paused": true
+  },
+  "short": {
+   "enabled": false,
+   "k": 3,
+   "target_atr": 0.25,
+   "max_days": 5,
+   "rank_by": "ret_5",
+   "paused": false
+  }
+ },
+ "actions": [],
+ "accuracy": {
+  "last40": {
+   "n": 40,
+   "win": 0.675,
+   "avg": -0.0676,
+   "worst": -0.8998,
+   "p05": -0.3642
+  },
+  "last13w": {
+   "n": 196,
+   "win": 0.765,
+   "avg": -0.018,
+   "worst": -0.8998,
+   "p05": -0.1675
+  },
+  "expectation": {
+   "win": 0.83,
+   "avg_lo": 0.003,
+   "avg_hi": 0.006
+  },
+  "status": "ALERT"
+ },
+ "retune_table": [
+  {
+   "target_atr": 0.25,
+   "max_days": 3,
+   "n": 371,
+   "win": 0.739,
+   "avg": -0.00644
+  },
+  {
+   "target_atr": 0.25,
+   "max_days": 5,
+   "n": 370,
+   "win": 0.786,
+   "avg": -0.00794
+  },
+  {
+   "target_atr": 0.5,
+   "max_days": 3,
+   "n": 371,
+   "win": 0.639,
+   "avg": -0.00674
+  },
+  {
+   "target_atr": 0.5,
+   "max_days": 5,
+   "n": 367,
+   "win": 0.703,
+   "avg": -0.00838
+  },
+  {
+   "target_atr": 0.75,
+   "max_days": 3,
+   "n": 369,
+   "win": 0.575,
+   "avg": -0.00551
+  },
+  {
+   "target_atr": 0.75,
+   "max_days": 5,
+   "n": 365,
+   "win": 0.622,
+   "avg": -0.0087
+  }
+ ],
+ "short_retest": {
+  "stats": {
+   "n": 747,
+   "win": 0.898,
+   "avg": 0.00451,
+   "worst": -0.8892,
+   "p05": -0.104
+  },
+  "passes": false,
+  "bar": "avg \u2265 +0.5%, \u226580% profitable, no loss worse than \u221235%, \u2265100 trades"
+ },
+ "mistakes": {
+  "n_losers": 46,
+  "n_winners": 150,
+  "patterns": [
+   {
+    "key": "ret_60",
+    "feature": "60-day gain",
+    "losers": 0.5153345227637403,
+    "winners": 0.8022611784650991,
+    "gap": -0.30322946072184337
+   },
+   {
+    "key": "ret_5",
+    "feature": "5-day gain",
+    "losers": 0.1278073860850851,
+    "winners": 0.07728698779915294,
+    "gap": 0.23594987267584128
+   },
+   {
+    "key": "ret_20",
+    "feature": "20-day gain",
+    "losers": 0.2819344354499348,
+    "winners": 0.36921570362700884,
+    "gap": -0.22258745922277348
+   }
+  ],
+  "worst": [
+   {
+    "date": "2026-11-11",
+    "symbol": "SNDK",
+    "ret": -0.8998077037953619
+   },
+   {
+    "date": "2026-10-28",
+    "symbol": "LITE",
+    "ret": -0.4461950833578024
+   },
+   {
+    "date": "2026-10-29",
+    "symbol": "LITE",
+    "ret": -0.3598552991554657
+   }
+  ]
+ },
+ "params_after": {
+  "version": 2,
+  "updated": "2026-10-24",
+  "long": {
+   "enabled": true,
+   "k": 3,
+   "target_atr": 0.25,
+   "max_days": 5,
+   "rank_by": "dollar_vol20",
+   "paused": true
+  },
+  "short": {
+   "enabled": false,
+   "k": 3,
+   "target_atr": 0.25,
+   "max_days": 5,
+   "rank_by": "ret_5",
+   "paused": false
+  }
+ }
+}
